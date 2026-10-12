@@ -1,0 +1,179 @@
+/* About section, creative details, and portrait. */
+.about-section {
+  background: #f8f7f4;
+  overflow: hidden;
+  padding-bottom: 0;
+  background-color: #faf8f3;
+  background-image:
+    radial-gradient(ellipse at 0% 60%, #d6be8a24, transparent 65%),
+    linear-gradient(#a995761a 1px, transparent 1px),
+    linear-gradient(90deg, #a995761a 1px, transparent 1px);
+  background-size:
+    auto,
+    56px 56px,
+    56px 56px;
+}
+.about-section .section-shell {
+  max-width: 1600px;
+}
+.about-section .section-topline {
+  border-top: 0;
+  padding-top: 90px;
+}
+.about-headline {
+  margin: 24px 0 48px;
+  font-size: clamp(50px, 6.3vw, 98px);
+  line-height: 1.02;
+  letter-spacing: -0.065em;
+}
+.about-headline em {
+  color: #a27a43;
+}
+.about-section .about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: clamp(40px, 5vw, 90px);
+  padding-top: 0;
+}
+.about-section .about-copy {
+  padding-top: 26px;
+}
+.about-section .about-copy p {
+  max-width: 530px;
+  margin: 0 0 24px;
+  color: #302e29;
+  font-size: clamp(16px, 1.35vw, 20px);
+  line-height: 1.55;
+}
+.about-copy > p:first-child strong {
+  color: #98703b;
+  font-weight: 700;
+}
+.about-section .about-copy .about-belief {
+  color: #171715;
+  font-weight: 800;
+  font-size: clamp(21px, 1.7vw, 26px);
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+  margin-top: 32px;
+}
+.about-details {
+  max-width: 430px;
+  margin: 30px 0;
+  padding: 8px 26px;
+  border-radius: 22px;
+  background: #171715;
+  color: #f8f7f4;
+}
+.about-details > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 21px 0;
+}
+.about-details > div + div {
+  border-top: 1px solid #ffffff25;
+}
+.about-details > div > span {
+  flex: 0 0 30px;
+  color: #d6be8a;
+  font-size: 24px;
+}
+.about-section .about-details p {
+  margin: 0;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.3;
+}
+.about-details strong {
+  display: block;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+.about-details small {
+  display: block;
+  margin-top: 5px;
+  color: #c5c1b8;
+  font-size: 12px;
+}
+.about-visual {
+  position: relative;
+  min-width: 0;
+  padding-top: 90px;
+  align-self: end;
+}
+.about-backdrop-word {
+  position: absolute;
+  top: -15px;
+  left: -12px;
+  color: #1717150b;
+  font-family: Anton, Impact, sans-serif;
+  font-size: clamp(120px, 15vw, 240px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  user-select: none;
+}
+.about-portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  margin-top: -40px;
+  transform: translateX(-22%);
+}
+.about-portrait-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: none;
+}
+@media (max-width: 1000px) {
+  .about-section .about-layout {
+    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-portrait-frame {
+    transform: translateX(-12%);
+    margin-top: -24px;
+  }
+  .about-details {
+    padding: 8px 18px;
+  }
+  .about-details strong {
+    font-size: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .about-section .section-topline {
+    padding-top: 65px;
+  }
+  .about-headline {
+    font-size: clamp(39px, 8.2vw, 58px);
+    margin: 22px 0 32px;
+  }
+  .about-section .about-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .about-section .about-copy {
+    padding-top: 0;
+  }
+  .about-section .about-copy p,
+  .about-details {
+    max-width: none;
+  }
+  .about-visual {
+    width: min(100%, 520px);
+    margin: 0 auto;
+    padding-top: 72px;
+  }
+  .about-backdrop-word {
+    font-size: clamp(110px, 26vw, 170px);
+    left: 0;
+    top: 0;
+  }
+  .about-portrait-frame {
+    transform: none;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,242 @@
+/* Hero composition and responsive portrait layout. */
+.hero-link:hover {
+  color: #9c783c;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 100svh;
+  min-height: 680px;
+  max-height: none;
+  border-top: 4px solid #32292d;
+  background: #fff;
+}
+.hero-status {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  top: 16px;
+  right: 3.1vw;
+  gap: 0;
+  font-size: clamp(13px, 1.13vw, 20px);
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+.status-dot {
+  margin-right: 15px;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  background: #21f36c;
+  box-shadow:
+    0 0 0 8px #21f36c1c,
+    0 0 16px #21f36caa;
+}
+.hero-word {
+  position: absolute;
+  white-space: nowrap;
+  color: transparent;
+  user-select: none;
+  top: 16%;
+  left: -4.5%;
+  width: auto;
+  font-family: Anton, Impact, sans-serif;
+  font-size: clamp(220px, 24vw, 485px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  background: linear-gradient(180deg, #b68e54 0%, #c9a976 33%, #e7dac3 60%, #fff 92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: scaleX(1.2);
+  transform-origin: left center;
+}
+.hero-portrait {
+  position: absolute;
+  z-index: 2;
+  max-width: none;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: auto;
+  object-fit: cover;
+  object-position: 43% bottom;
+  transform: none;
+  filter: none;
+  animation: none !important;
+}
+.hero-copy {
+  position: absolute;
+  z-index: 4;
+  top: 55%;
+  left: 50px;
+  max-width: none;
+  animation: none !important;
+}
+.hero-copy h1 {
+  font-family: Manrope, Arial, sans-serif;
+  letter-spacing: -0.075em;
+  font-weight: 800;
+  color: #a5793a;
+  margin: 13px 0 14px;
+  font-size: 102px;
+  line-height: 0.98;
+  white-space: nowrap;
+}
+.hero-copy p {
+  margin: 0;
+  max-width: 340px;
+  margin-left: 0;
+  font-family: Manrope, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.22;
+  font-weight: 700;
+}
+.hero-link {
+  gap: 16px;
+  align-items: center;
+  margin-top: 26px;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 5px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: none;
+}
+.hero-role {
+  position: absolute;
+  z-index: 5;
+  font-family: Manrope, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  right: 7.35%;
+  bottom: 25px;
+  min-width: 445px;
+  padding: 13px 21px 12px;
+  border: 1.5px solid #101010;
+  border-radius: 19px;
+  background: #ffffffed;
+  box-shadow: none;
+  font-size: 46px;
+  line-height: 1.02;
+  animation: none !important;
+}
+.hero-location {
+  position: absolute;
+  z-index: 6;
+  font-weight: 800;
+  left: 50px;
+  bottom: 14px;
+  font-size: 20px;
+  letter-spacing: -0.045em;
+}
+.hero-scroll {
+  position: absolute;
+  z-index: 6;
+  bottom: 26px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  right: clamp(24px, 4vw, 72px);
+  gap: 11px;
+  display: none;
+}
+.hero-scroll span {
+  font-size: 18px;
+  line-height: 0.5;
+  color: #a47a3f;
+}
+@media (max-width: 680px) {
+  .hero-link {
+    font-size: 10px;
+    margin-top: 14px;
+  }
+}
+@media (max-width: 1050px) {
+  .hero-word {
+    top: 19%;
+    font-size: 27vw;
+  }
+  .hero-portrait {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: auto;
+    transform: none;
+  }
+  .hero-copy {
+    top: 55%;
+    left: 50px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(45px, 5.3vw, 62px);
+  }
+  .hero-role {
+    right: 4%;
+    min-width: 0;
+    font-size: 28px;
+  }
+}
+@media (max-width: 680px) {
+  .hero {
+    height: 860px;
+    min-height: 0;
+  }
+  .hero-status {
+    top: 89px;
+    right: 20px;
+    font-size: 11px;
+    gap: 9px;
+  }
+  .status-dot {
+    width: 10px;
+    height: 10px;
+  }
+  .hero-word {
+    top: 138px;
+    left: -5%;
+    font-size: 34vw;
+  }
+  .hero-portrait {
+    top: 150px;
+    bottom: auto;
+    left: 50%;
+    width: auto;
+    height: 320px;
+    transform: translateX(-43%);
+    object-fit: contain;
+    mask-image: none;
+  }
+  .hero-copy {
+    top: 554px;
+    bottom: auto;
+    left: 50px;
+    right: 20px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(37px, 9.5vw, 48px);
+    margin: 9px 0;
+  }
+  .hero-copy p {
+    font-size: 16px;
+  }
+  .hero-role {
+    top: 745px;
+    bottom: auto;
+    right: 20px;
+    min-width: 0;
+    padding: 10px 13px;
+    font-size: 18px;
+    border-radius: 11px;
+  }
+  .hero-location {
+    left: 50px;
+    bottom: 15px;
+    font-size: 10px;
+  }
+}
