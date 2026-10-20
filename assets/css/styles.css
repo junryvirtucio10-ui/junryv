@@ -3,7 +3,11 @@
 :root {
   --ink: #151515;
   --paper: #f8f7f4;
-  --gold: #c5a46d;
+  --gold: #e8b11a;
+  --gold-deep: #7e4c00;
+  --gold-dark: #a86f00;
+  --gold-mid: #c98d00;
+  --gold-soft: #f0cf69;
   --muted: #5c5b58;
   --line: #dedbd5;
   --content-radius: 20px;
@@ -71,7 +75,7 @@ textarea {
   display: none;
 }
 .site-header nav a:hover {
-  color: #9c783c;
+  color: #a86f00;
 }
 .header-cta {
   border: 1px solid var(--ink);
@@ -94,7 +98,7 @@ textarea {
 }
 .handwritten {
   display: block;
-  color: #a77c42;
+  color: #b67d00;
   font-family: "Nothing You Could Do", cursive;
   font-size: clamp(30px, 4.1vw, 62px);
   line-height: 1.1;
@@ -126,7 +130,7 @@ section {
 }
 .eyebrow {
   display: block;
-  color: #a88149;
+  color: #b67d00;
   font-weight: 800;
   letter-spacing: 0.16em;
   font-size: 14px;
@@ -154,13 +158,19 @@ h3 em {
 .site-header .brand {
   display: block;
   flex-shrink: 0;
+  width: 84px;
+  aspect-ratio: 1477 / 1065;
   padding: 0;
   line-height: 0;
+  background: var(--gold);
+  -webkit-mask: url("../images/jv-champagne-gold.webp") center / contain no-repeat;
+  mask: url("../images/jv-champagne-gold.webp") center / contain no-repeat;
 }
 .site-header .brand img {
   display: block;
-  width: 84px;
+  width: 100%;
   height: auto;
+  opacity: 0;
 }
 .site-header .header-cta {
   display: none;
@@ -260,6 +270,9 @@ h3 em {
     padding: 18px 20px;
   }
   .site-header .brand img {
+    width: 100%;
+  }
+  .site-header .brand {
     width: 68px;
   }
   .site-header .menu-toggle {

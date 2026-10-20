@@ -35,7 +35,7 @@
 }
 
 .audio-toggle:focus-visible {
-  outline: 3px solid #c5a46d;
+  outline: 3px solid #e8b11a;
   outline-offset: 4px;
 }
 
@@ -53,7 +53,7 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    #c5a46d 0 16%,
+    #e8b11a 0 16%,
     #0d0d0d 17% 19%,
     #151313 20% 43%,
     #3c3327 44% 48%,
@@ -72,7 +72,7 @@
   height: 7px;
   border-radius: 50%;
   background: #090909;
-  box-shadow: 0 0 0 1px #8c7047;
+  box-shadow: 0 0 0 1px #a86f00;
 }
 
 .audio-toggle-copy {
@@ -110,7 +110,7 @@
   width: 3px;
   height: 8px;
   border-radius: 2px;
-  background: #c5a46d;
+  background: #e8b11a;
   transform: scaleY(0.55);
   transform-origin: center;
 }
@@ -150,7 +150,7 @@
   max-width: none;
   padding: 0;
   overflow: visible;
-  border: 1px solid #c5a46d38;
+  border: 1px solid #e8b11a38;
   border-radius: 20px;
   background: transparent;
   color: #fff;
@@ -203,7 +203,7 @@
 }
 
 .entry-gate-eyebrow span {
-  color: #c5a46d;
+  color: #e8b11a;
 }
 
 .entry-gate h2 {
@@ -216,7 +216,7 @@
 }
 
 .entry-gate h2 em {
-  color: #c5a46d;
+  color: #e8b11a;
   font-style: normal;
 }
 
@@ -233,9 +233,9 @@
   justify-content: center;
   gap: 20px;
   padding: 0 22px;
-  border: 1px solid #c5a46d55;
+  border: 1px solid #e8b11a55;
   border-radius: 999px;
-  background: #c5a46d12;
+  background: #e8b11a12;
   color: #fff;
   font-size: 10px;
   font-weight: 800;
@@ -245,13 +245,13 @@
 }
 
 .entry-gate-play:hover:not(:disabled) {
-  border-color: #c5a46d;
-  background: #c5a46d24;
+  border-color: #e8b11a;
+  background: #e8b11a24;
 }
 
 .entry-gate-play:focus-visible,
 .entry-gate-silent:focus-visible {
-  outline: 2px solid #c5a46d;
+  outline: 2px solid #e8b11a;
   outline-offset: 4px;
 }
 
@@ -261,7 +261,7 @@
 }
 
 .entry-gate-play span {
-  color: #c5a46d;
+  color: #e8b11a;
   font-size: 16px;
 }
 
@@ -283,7 +283,7 @@
 .entry-gate-status {
   min-height: 1em;
   margin: 12px 0 0;
-  color: #d8bd91;
+  color: #e8b11a;
   font-size: 11px;
 }
 

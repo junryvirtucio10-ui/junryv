@@ -1,6 +1,6 @@
 /* Hero composition and responsive portrait layout. */
 .hero-link:hover {
-  color: #9c783c;
+  color: #a86f00;
 }
 .hero {
   position: relative;
@@ -47,7 +47,17 @@
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.005em;
-  background: linear-gradient(180deg, #b68e54 0%, #c9a976 33%, #e7dac3 60%, #fff 92%);
+  background: linear-gradient(
+    180deg,
+    #403b33 0%,
+    #514a40 20%,
+    #7e7363 36%,
+    #a99b87 51%,
+    #c8bfb2 64%,
+    #e2ddd5 78%,
+    #f1eee8 90%,
+    #f8f7f4 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   transform: scaleX(1.2);
@@ -80,11 +90,44 @@
   font-family: Manrope, Arial, sans-serif;
   letter-spacing: -0.075em;
   font-weight: 800;
-  color: #a5793a;
+  color: #e8b11a;
+  background: linear-gradient(
+    108deg,
+    #7e4c00 0%,
+    #a96b00 20%,
+    #cf9206 40%,
+    #e8b11a 52%,
+    #c78300 66%,
+    #8d5700 82%,
+    #d99d0c 100%
+  );
+  background-size: 240% 100%;
+  background-position: 0% 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hero-name-shine 7s ease-in-out infinite;
   margin: 13px 0 14px;
   font-size: 102px;
   line-height: 0.98;
   white-space: nowrap;
+}
+
+@keyframes hero-name-shine {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy h1 {
+    animation: none;
+    background-position: 45% 50%;
+  }
 }
 .hero-copy p {
   margin: 0;
@@ -148,7 +191,7 @@
 .hero-scroll span {
   font-size: 18px;
   line-height: 0.5;
-  color: #a47a3f;
+  color: #a86f00;
 }
 @media (max-width: 680px) {
   .hero-link {

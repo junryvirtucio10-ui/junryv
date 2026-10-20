@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/about.css" />
     <link rel="stylesheet" href="assets/css/audio.css" />
     <link rel="stylesheet" href="assets/css/motion.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -209,11 +210,12 @@
               <span class="eyebrow">SHORT-FORM / 9:16</span>
               <h3>Made for the <em>scroll.</em></h3>
             </div>
-            <p>More published reel edits. Each card opens the original post on Facebook.</p>
+            <p>Drag to explore the edits. Pick a reel, then open the original on Facebook.</p>
           </div>
-          <div class="reels-grid" data-group="reels">
+          <div class="reels-carousel" data-group="reels" role="region" aria-roledescription="carousel" aria-label="Published reels" tabindex="0">
+          <div class="reels-grid">
             <a
-              class="reel-card reel-one scroll-reveal reveal-zoom delay-0"
+              class="reel-card reel-one"
               href="https://www.facebook.com/reel/955034660087622"
               target="_blank"
               rel="noopener noreferrer"
@@ -231,7 +233,7 @@
               ><span class="reel-bottom">WATCH ON FACEBOOK <b aria-hidden="true">↗</b></span></a
             >
             <a
-              class="reel-card reel-two scroll-reveal reveal-zoom delay-100"
+              class="reel-card reel-two"
               href="https://www.facebook.com/reel/1240679263856828"
               target="_blank"
               rel="noopener noreferrer"
@@ -249,7 +251,7 @@
               ><span class="reel-bottom">WATCH ON FACEBOOK <b aria-hidden="true">↗</b></span></a
             >
             <a
-              class="reel-card reel-three scroll-reveal reveal-zoom delay-200"
+              class="reel-card reel-three"
               href="https://www.facebook.com/reel/587184103711599"
               target="_blank"
               rel="noopener noreferrer"
@@ -266,6 +268,15 @@
               ><span class="see-video-hint" aria-hidden="true">View project ↗</span
               ><span class="reel-bottom">WATCH ON FACEBOOK <b aria-hidden="true">↗</b></span></a
             >
+          </div>
+          <div class="reels-navigation" hidden>
+            <div class="reels-arrows">
+              <button type="button" data-reel-direction="-1" aria-label="Previous reel"><span aria-hidden="true">←</span></button>
+              <button type="button" data-reel-direction="1" aria-label="Next reel"><span aria-hidden="true">→</span></button>
+            </div>
+            <p class="reels-status" aria-live="polite" aria-atomic="true"></p>
+            <div class="reels-dots" aria-label="Choose a reel"></div>
+          </div>
           </div>
         </div>
       </section>
@@ -532,23 +543,42 @@
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="section-shell">
           <div class="section-topline scroll-reveal reveal-fade">
-            <span>05 / START A PROJECT</span><span>LET’S MAKE SOMETHING WORTH WATCHING</span>
+            <span>05 / START A PROJECT</span><span class="contact-top-caption"><i aria-hidden="true"></i> YOUR NEXT GOOD IDEA STARTS HERE</span>
           </div>
           <div class="contact-layout">
             <div class="contact-intro scroll-reveal reveal-left">
-              <span class="handwritten">Have something in mind?</span>
-              <h2 id="contact-title">Let’s bring it <em>to life.</em></h2>
-              <p>
-                Tell me what you’re creating, what you need help with, and where you want the
-                content to go.
-              </p>
-              <div class="direct-contact">
-                <span>PREFER TO REACH OUT DIRECTLY?</span
-                ><a href="mailto:junry.virtucio10@gmail.com"
-                  >junry.virtucio10@gmail.com <b aria-hidden="true">↗</b></a
-                ><a href="https://wa.me/639622149985" target="_blank" rel="noopener noreferrer"
-                  >WhatsApp <b aria-hidden="true">↗</b></a
-                >
+              <div class="contact-kicker"><span aria-hidden="true">✳</span> FROM “WHAT IF” TO “WATCH THIS.”</div>
+              <h2 id="contact-title">Let’s make<br />some <em>noise<span aria-hidden="true">↗</span></em></h2>
+              <p>Your footage. Your brand. A little creative chaos.<br />Let’s turn it into content people stop scrolling for.</p>
+              <div class="contact-editor" aria-label="Creative editing preview">
+                <div class="editor-toolbar"><span><i aria-hidden="true"></i> NEXT_BIG_THING.mov</span><span>PREVIEW / 01</span></div>
+                <div class="editor-preview">
+                  <span class="preview-corner">YOUR IDEA, REIMAGINED</span>
+                  <div class="preview-art" aria-hidden="true"><span class="preview-word">MAKE<br /><b>IT POP.</b></span><span class="preview-star">✳</span><span class="preview-sticker">made to<br />be seen.</span></div>
+                  <button class="editor-play" type="button" aria-label="Pause creative preview" aria-pressed="true"><span aria-hidden="true">Ⅱ</span></button>
+                  <span class="preview-format">9:16 / 16:9 / YOUR CALL</span>
+                </div>
+                <div class="editor-timeline" aria-hidden="true">
+                  <div class="timeline-ruler"><span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span></div>
+                  <div class="timeline-track"><span>THE IDEA</span><span>THE EDIT</span><span>THE IMPACT ↗</span></div>
+                  <div class="timeline-wave"></div><div class="timeline-playhead"></div>
+                </div>
+                <div class="editor-caption"><span>GOOD CONTENT STARTS WITH A CONVERSATION.</span><span aria-hidden="true">↳</span></div>
+              </div>
+              <div class="direct-contact" aria-label="Contact Junry directly">
+                <span>SKIP THE FORM. SAY HELLO.</span>
+                <div class="direct-contact-actions">
+                  <a class="direct-cta direct-cta-email" href="mailto:junry.virtucio10@gmail.com">
+                    <span class="direct-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m4 7 8 6 8-6" /></svg></span>
+                    <span class="direct-cta-copy"><strong>Email me</strong><small>junry.virtucio10@gmail.com</small></span>
+                    <b aria-hidden="true">↗</b>
+                  </a>
+                  <a class="direct-cta direct-cta-whatsapp" href="https://wa.me/639622149985" target="_blank" rel="noopener noreferrer">
+                    <span class="direct-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a9 9 0 0 1-13.4 7.8L3 21l1.7-4.6A9 9 0 1 1 21 11.5Z" /><path d="M8.5 7.5c.8 4 3 6.2 7 7l1-2-2-1-1 1c-1.5-.6-2.4-1.5-3-3l1-1-1-2-2 1Z" /></svg></span>
+                    <span class="direct-cta-copy"><strong>Chat on WhatsApp</strong><small>Let’s talk about your idea</small></span>
+                    <b aria-hidden="true">↗</b>
+                  </a>
+                </div>
               </div>
             </div>
             <form
@@ -568,6 +598,15 @@
                 name="_template"
                 value="table"
               /><input type="hidden" name="_captcha" value="false" />
+              <div class="brief-heading"><div><span class="brief-eyebrow">THE CREATIVE BRIEF</span><h3>What are we making?</h3></div><span class="brief-number" aria-hidden="true">01 ↗</span></div>
+              <p class="brief-intro">Pick your thing. Tell me the vision. I’ll take it from there.</p>
+              <div class="brief-progress"><span id="brief-progress-label" aria-live="polite">Let’s get your idea rolling</span><span id="brief-progress-count">0 / 4</span><div class="brief-progress-track" role="progressbar" aria-label="Required brief fields completed" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"><i></i></div></div>
+              <fieldset class="service-picker"><legend>I need help with…</legend><div class="service-choices">
+                <button type="button" data-project="Video editing" aria-pressed="false"><span aria-hidden="true">▶</span> Video editing</button>
+                <button type="button" data-project="Short-form reels" aria-pressed="false"><span aria-hidden="true">↗</span> Reels & shorts</button>
+                <button type="button" data-project="Social media management" aria-pressed="false"><span aria-hidden="true">✳</span> Social media</button>
+                <button type="button" data-project="Graphics / thumbnails" aria-pressed="false"><span aria-hidden="true">▧</span> Graphics</button>
+              </div></fieldset>
               <div class="form-grid">
                 <div class="field">
                   <label for="name">Name <span>*</span></label
@@ -591,7 +630,7 @@
                   />
                 </div>
                 <div class="field">
-                  <label for="company">Company or organization</label
+                  <label for="company">Brand / company</label
                   ><input
                     id="company"
                     name="company"
@@ -620,20 +659,20 @@
                   ><input id="timeline" name="timeline" placeholder="When do you need it?" />
                 </div>
                 <div class="field field-wide">
-                  <label for="details">Project details <span>*</span></label
+                  <label for="details">The vision <span>*</span></label
                   ><textarea
                     id="details"
                     name="message"
-                    placeholder="What are you making, and what would a great result look like?"
+                    placeholder="Give me the rough cut: your idea, audience, and what you want the content to do."
                     rows="5"
                     required
                   ></textarea>
                 </div>
               </div>
               <button class="send-button" type="submit">
-                Send project details <span aria-hidden="true">↗</span>
+                Let’s hit play <span aria-hidden="true">↗</span>
               </button>
-              <p class="form-note">Your message goes directly to my email.</p>
+              <p class="form-note">Straight to my inbox. Let’s make something worth watching.</p>
             </form>
           </div>
         </div>

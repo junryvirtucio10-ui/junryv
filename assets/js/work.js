@@ -1,6 +1,9 @@
+import { initReels } from "./reels.js";
+
 export function initWork() {
   const workSection = document.querySelector("#work");
   if (!workSection) return;
+  initReels(workSection);
   const filterButtons = [...workSection.querySelectorAll(".filter-button")];
   const videoHoverMedia = window.matchMedia("(hover: hover) and (pointer: fine)");
   const videoHoverCursor = document.createElement("div");
@@ -30,7 +33,7 @@ export function initWork() {
     videoHoverCursor.classList.add("is-visible");
     document.body.classList.add("video-cursor-active");
   };
-  workSection.querySelectorAll(".video-media, .reel-card").forEach((card) => {
+  workSection.querySelectorAll(".video-media").forEach((card) => {
     card.addEventListener("pointerenter", moveVideoCursor);
     card.addEventListener("pointermove", moveVideoCursor);
     card.addEventListener("pointerleave", hideVideoCursor);

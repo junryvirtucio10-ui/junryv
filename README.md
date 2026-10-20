@@ -9,6 +9,9 @@ A static portfolio website using HTML, CSS, and browser JavaScript modules. No b
 - `assets/css/sections.css` — work, contact, and footer styling.
 - `assets/css/services.css` — service cards and their animated compositions.
 - `assets/css/hero.css`, `process.css`, `about.css` — section-specific styling.
+- `assets/css/contact.css` — creative brief styling and animated editor preview.
+- `assets/js/contact.js` — service selection, responsive preview, and brief progress.
+- `assets/js/reels.js` — looping reel carousel with dragging, side-card selection, and keyboard controls.
 - `assets/css/audio.css` — soundtrack controls and entry dialog.
 - `assets/css/motion.css` — scroll reveals and motion preferences.
 - `assets/js/main.js` — initializes the feature modules beside it.
@@ -38,5 +41,7 @@ Formatting settings are stored in `.prettierrc.json`.
 ## Editing and deployment
 
 Edit page text and project links in `index.html`. Adjust a section's appearance in its stylesheet and its interactions in the corresponding JavaScript module.
+
+To add a reel, duplicate one `.reel-card` inside `.reels-carousel .reels-grid` in `index.html`. Update its Facebook URL, thumbnail path, image alt text, accessible label, and reel number. The carousel automatically includes all these cards and builds its count and navigation dots when the page loads. Its center card opens Facebook; side cards move into focus. Keep at least three cards for the looping layout.
 
 Deploy `index.html` and the entire `assets/` folder together. The archive and development files are not needed for hosting. Google Fonts and two YouTube thumbnails load from external services. The contact form uses the existing FormSubmit endpoint; soundtrack playback begins after a visitor chooses to play it.

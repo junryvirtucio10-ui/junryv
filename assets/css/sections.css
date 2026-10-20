@@ -201,6 +201,162 @@
   line-height: 0.5;
   color: var(--gold);
 }
+.reels-carousel {
+  container-type: inline-size;
+}
+.reels-carousel:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 8px;
+  border-radius: var(--content-radius);
+}
+.reels-carousel.is-ready .reels-grid {
+  position: relative;
+  display: block;
+  margin-inline: auto;
+  height: 60.45cqw;
+  overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  /* Fade the outside edges while keeping the active reel crisp. */
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.reels-carousel.is-ready .reel-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 34cqw;
+  box-sizing: border-box;
+  will-change: transform, opacity;
+  transition: none;
+  cursor: grab;
+  border-color: #756344;
+}
+.reels-carousel.is-ready .reel-card.is-active {
+  border-color: var(--gold);
+  z-index: 2;
+}
+.reels-carousel.is-ready .is-moving .reel-card {
+  transition: transform .42s cubic-bezier(.22, .68, .25, 1), opacity .42s ease;
+}
+.reels-carousel.is-ready .is-dragging,
+.reels-carousel.is-ready .is-dragging .reel-card {
+  cursor: grabbing;
+}
+.reels-carousel.is-ready .reel-card::after,
+.reels-carousel.is-ready .reel-card:focus-visible::after {
+  opacity: 0;
+}
+.reels-carousel.is-ready .reel-card:hover .reel-thumbnail {
+  transform: none;
+}
+.reels-carousel.is-ready .reel-card:not(.is-active) .see-video-hint {
+  display: none;
+}
+.reels-carousel.is-ready .reel-card.is-active:hover .see-video-hint {
+  opacity: 1;
+}
+.reels-carousel.is-ready .reel-card:focus-visible {
+  outline-offset: -5px;
+}
+.reels-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 24px;
+}
+.reels-arrows, .reels-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.reels-arrows button {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #756344;
+  border-radius: 50%;
+  color: #f8f7f4;
+  background: transparent;
+  font-size: 23px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.reels-arrows button:hover {
+  background: var(--gold);
+  color: #171715;
+}
+.reels-status {
+  margin: 0;
+  color: #bcb7ae;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+.reels-dots {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 220px;
+  gap: 2px;
+}
+.reels-dots button {
+  width: 28px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.reels-dots button::before {
+  content: "";
+  display: block;
+  margin: auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #756344;
+}
+.reels-dots button[aria-pressed="true"]::before {
+  width: 20px;
+  border-radius: 8px;
+  background: var(--gold);
+}
+.reels-navigation button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+@media (max-width: 680px) {
+  .reels-carousel.is-ready .reels-grid {
+    height: 99.56cqw;
+  }
+  .reels-carousel.is-ready .reel-card {
+    width: 56cqw;
+    padding: 10px;
+  }
+  .reels-carousel.is-ready .reel-bottom {
+    font-size: 7px;
+    letter-spacing: .04em;
+    padding: 7px;
+  }
+  .reels-navigation {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .reels-status {
+    order: 3;
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reels-carousel.is-ready .is-moving .reel-card {
+    transition: none;
+  }
+}
 .contact-section {
   background: #e7dcc8;
   padding-bottom: 125px;
@@ -222,7 +378,7 @@
   margin: 22px 0;
 }
 .contact-intro h2 em {
-  color: #957144;
+  color: #a86f00;
 }
 .contact-intro p {
   font-size: 17px;
@@ -252,16 +408,16 @@
   overflow-wrap: anywhere;
 }
 .direct-contact a:hover {
-  color: #946d35;
+  color: #a86f00;
 }
 .direct-contact b {
-  color: #9d7541;
+  color: #a86f00;
   margin-left: 8px;
 }
 .contact-form {
   background: #fbfaf6;
   border: 1px solid #b7a890;
-  box-shadow: 12px 12px 0 #c2ad8b;
+  box-shadow: 12px 12px 0 #e8b11a;
   padding: clamp(20px, 3vw, 42px);
   border-radius: var(--content-radius);
 }
@@ -289,7 +445,7 @@
   text-transform: uppercase;
 }
 .field label span {
-  color: #9f6f2d;
+  color: #a86f00;
 }
 .field input,
 .field select {
@@ -316,8 +472,8 @@
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  border-color: #8d6b3d;
-  box-shadow: 0 0 0 2px #c5a46d60;
+  border-color: #9f6900;
+  box-shadow: 0 0 0 2px #e8b11a60;
 }
 .field input::placeholder,
 .field textarea::placeholder {
@@ -447,18 +603,18 @@
   opacity: 1;
 }
 .video-card:focus-visible {
-  outline: 2px solid #d6be8a;
+  outline: 2px solid #e8b11a;
   outline-offset: 6px;
   border-radius: var(--content-radius);
 }
 .reel-card:focus-visible {
-  outline: 2px solid #d6be8a;
+  outline: 2px solid #e8b11a;
   outline-offset: 6px;
   border-radius: var(--content-radius);
-  border-color: #d6be8a;
+  border-color: #e8b11a;
   box-shadow:
-    0 0 0 1px #d6be8a66,
-    0 0 22px #d6be8a30;
+    0 0 0 1px #e8b11a66,
+    0 0 22px #e8b11a30;
 }
 .reel-thumbnail {
   position: absolute;
@@ -483,10 +639,10 @@
   transition: opacity 0.25s ease;
 }
 .video-card:focus-visible .video-media {
-  border-color: #d6be8a;
+  border-color: #e8b11a;
   box-shadow:
-    0 0 0 1px #d6be8a66,
-    0 0 22px #d6be8a30;
+    0 0 0 1px #e8b11a66,
+    0 0 22px #e8b11a30;
 }
 .video-card:focus-visible .video-media::after,
 .reel-card:focus-visible::after {
@@ -567,7 +723,7 @@
     margin: 35px 0 44px;
   }
   .contact-form {
-    box-shadow: 7px 7px 0 #c2ad8b;
+    box-shadow: 7px 7px 0 #e8b11a;
   }
   .form-grid {
     grid-template-columns: 1fr;
@@ -606,10 +762,10 @@
 @media (hover: hover) {
   .video-media:hover,
   .reel-card:hover {
-    border-color: #d6be8a;
+    border-color: #e8b11a;
     box-shadow:
-      0 0 0 1px #d6be8a66,
-      0 0 22px #d6be8a30;
+      0 0 0 1px #e8b11a66,
+      0 0 22px #e8b11a30;
   }
   .video-media:hover::after,
   .reel-card:hover::after {

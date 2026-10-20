@@ -66,8 +66,8 @@ main {
   inset: 0 0 auto;
   z-index: 900;
   height: 4px;
-  background: linear-gradient(90deg, #a77c42, #e4cc9e);
-  box-shadow: 0 0 12px #c5a46d66;
+  background: linear-gradient(90deg, #b67d00, #e4cc9e);
+  box-shadow: 0 0 12px #e8b11a66;
   transform: scaleX(var(--page-progress, 0));
   transform-origin: left;
   pointer-events: none;
@@ -121,7 +121,7 @@ main {
   right: 0;
   bottom: -18px;
   height: 2px;
-  background: #c5a46d;
+  background: #e8b11a;
   opacity: 0.65;
   transform: scaleX(var(--section-progress, 0));
   transform-origin: left;
