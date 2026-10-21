@@ -34,7 +34,7 @@ for (const name of scripts) {
   if (syntax.status !== 0) errors.push(`${name}: ${syntax.stderr.trim()}`);
   for (const [, dependency] of source.matchAll(/\bfrom\s+["'](\.[^"']+)["']/g)) {
     try {
-      await access(resolve(dirname(filename), dependency));
+      await access(resolve(dirname(filename), dependency.split(/[?#]/)[0]));
     } catch {
       errors.push(`Missing module: ${name} → ${dependency}`);
     }

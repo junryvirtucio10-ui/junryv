@@ -3,7 +3,6 @@ export function initServices() {
   if (!cards.length) return;
   const pointerMedia = window.matchMedia("(hover: hover) and (pointer: fine)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const projectType = document.querySelector("#project-type");
 
   cards.forEach((card) => {
     let frame = 0;
@@ -34,12 +33,5 @@ export function initServices() {
     reducedMotion.addEventListener("change", reset);
     window.addEventListener("blur", reset);
 
-    card.querySelector("[data-service]")?.addEventListener("click", (event) => {
-      // Modified clicks retain the browser's normal link behavior.
-      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !projectType) return;
-      projectType.value = event.currentTarget.dataset.service;
-      projectType.dispatchEvent(new Event("change", { bubbles: true }));
-      reset();
-    });
   });
 }

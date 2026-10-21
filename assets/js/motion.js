@@ -7,7 +7,8 @@ export function initMotion() {
   document.body.append(progress);
 
   const revealElements = [...document.querySelectorAll(".scroll-reveal")];
-  const sections = [...document.querySelectorAll("main > section")];
+  const sectionSelector = "main > section, .site-footer";
+  const sections = [...document.querySelectorAll(sectionSelector)];
   const media = [...document.querySelectorAll(".video-media, .edit-preview")];
   const hasObservers = "IntersectionObserver" in window;
   const nearbySections = new Set();
@@ -45,10 +46,10 @@ export function initMotion() {
         (entries) => {
           for (const entry of entries) {
             const target = entry.target;
-            const collection = target.matches("main > section") ? nearbySections : nearbyMedia;
+            const collection = target.matches(sectionSelector) ? nearbySections : nearbyMedia;
             if (entry.isIntersecting) collection.add(target);
             else collection.delete(target);
-            if (target.matches("main > section")) {
+            if (target.matches(sectionSelector)) {
               target.classList.toggle("is-in-view", entry.isIntersecting);
             }
           }
@@ -108,6 +109,9 @@ export function initMotion() {
       if (element.classList.contains("services-section")) {
         element.style.setProperty("--service-turn", `${(centered * -26 * strength).toFixed(2)}deg`);
         element.style.setProperty("--service-float", `${(centered * -52 * strength).toFixed(1)}px`);
+      }
+      if (element.matches(".proof-section, .site-footer")) {
+        element.style.setProperty("--closing-drift", `${(centered * -70 * strength).toFixed(1)}px`);
       }
     }
     for (const { element, bounds } of mediaGeometry) {

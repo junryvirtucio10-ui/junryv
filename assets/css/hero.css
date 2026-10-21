@@ -1,4 +1,23 @@
 /* Hero composition and responsive portrait layout. */
+.site-header .brand.hero-brand {
+  width: auto;
+  aspect-ratio: auto;
+  padding: 0;
+  background: none;
+  -webkit-mask: none;
+  mask: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 72px;
+  font-weight: 400;
+  letter-spacing: -0.08em;
+  line-height: 0.85;
+}
+.hero-brand span {
+  background: linear-gradient(120deg, #956316, #e3b64b 45%, #b88120 70%, #e8c568);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .hero-link:hover {
   color: #a86f00;
 }
@@ -39,7 +58,7 @@
   white-space: nowrap;
   color: transparent;
   user-select: none;
-  top: 16%;
+  top: 22%;
   left: -4.5%;
   width: auto;
   font-family: Anton, Impact, sans-serif;
@@ -49,14 +68,14 @@
   letter-spacing: 0.005em;
   background: linear-gradient(
     180deg,
-    #403b33 0%,
-    #514a40 20%,
-    #7e7363 36%,
-    #a99b87 51%,
-    #c8bfb2 64%,
-    #e2ddd5 78%,
-    #f1eee8 90%,
-    #f8f7f4 100%
+    #8c611c 0%,
+    #a87b29 20%,
+    #c99b42 36%,
+    #e5bd66 51%,
+    #f0d797 64%,
+    #f8ebc8 78%,
+    #fcf6e7 90%,
+    #fff 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -67,24 +86,32 @@
   position: absolute;
   z-index: 2;
   max-width: none;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
+  height: auto;
+  width: min(42vw, 800px);
+  left: 52%;
+  top: 9%;
   bottom: auto;
-  object-fit: cover;
-  object-position: 43% bottom;
-  transform: none;
+  object-fit: contain;
+  transform: translateX(-50%);
   filter: none;
   animation: none !important;
 }
 .hero-copy {
   position: absolute;
   z-index: 4;
-  top: 55%;
-  left: 50px;
-  max-width: none;
+  top: 66%;
+  left: clamp(48px, 10vw, 190px);
+  width: clamp(280px, 26vw, 440px);
   animation: none !important;
+}
+.hero-greeting {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% - 8px);
+  display: block;
+  width: 65%;
+  max-width: 260px;
+  height: auto;
 }
 .hero-copy h1 {
   font-family: Manrope, Arial, sans-serif;
@@ -108,7 +135,7 @@
   -webkit-text-fill-color: transparent;
   animation: hero-name-shine 7s ease-in-out infinite;
   margin: 13px 0 14px;
-  font-size: 102px;
+  font-size: clamp(62px, 6.05vw, 102px);
   line-height: 0.98;
   white-space: nowrap;
 }
@@ -134,7 +161,7 @@
   max-width: 340px;
   margin-left: 0;
   font-family: Manrope, Arial, sans-serif;
-  font-size: 24px;
+  font-size: clamp(18px, 1.42vw, 24px);
   line-height: 1.22;
   font-weight: 700;
 }
@@ -205,16 +232,17 @@
     font-size: 27vw;
   }
   .hero-portrait {
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
+    height: auto;
+    width: 54vw;
+    left: 67%;
+    top: 10%;
     bottom: auto;
-    transform: none;
+    transform: translateX(-50%);
   }
   .hero-copy {
-    top: 55%;
-    left: 50px;
+    top: 66%;
+    left: 10vw;
+    width: 31vw;
   }
   .hero-copy h1 {
     font-size: clamp(45px, 5.3vw, 62px);
@@ -224,8 +252,15 @@
     min-width: 0;
     font-size: 28px;
   }
+  .hero-greeting {
+    width: 72%;
+    max-width: 200px;
+  }
 }
 @media (max-width: 680px) {
+  .site-header .brand.hero-brand {
+    font-size: 56px;
+  }
   .hero {
     height: 860px;
     min-height: 0;
@@ -249,17 +284,20 @@
     top: 150px;
     bottom: auto;
     left: 50%;
-    width: auto;
-    height: 320px;
-    transform: translateX(-43%);
+    width: 100%;
+    height: 380px;
+    transform: translateX(-50%);
     object-fit: contain;
-    mask-image: none;
+    object-position: center top;
+    -webkit-mask-image: linear-gradient(#000 92%, transparent);
+    mask-image: linear-gradient(#000 92%, transparent);
   }
   .hero-copy {
-    top: 554px;
+    top: 625px;
     bottom: auto;
-    left: 50px;
-    right: 20px;
+    left: 30px;
+    right: 30px;
+    width: auto;
   }
   .hero-copy h1 {
     font-size: clamp(37px, 9.5vw, 48px);
@@ -268,17 +306,22 @@
   .hero-copy p {
     font-size: 16px;
   }
+  .hero-greeting {
+    width: 165px;
+    max-width: 70%;
+  }
   .hero-role {
     top: 745px;
     bottom: auto;
-    right: 20px;
+    left: 24px;
+    right: auto;
     min-width: 0;
     padding: 10px 13px;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 11px;
   }
   .hero-location {
-    left: 50px;
+    left: 30px;
     bottom: 15px;
     font-size: 10px;
   }
